@@ -1,0 +1,619 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://use.fontawesome.com/releases/v5.7.1/css/all.css');
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --main-color: #DD2F6E;
+    --menu-background-color: pink;
+    --menu-text-color: white;
+    --menu-icon-color: rgb(228, 24, 75);
+    --add-to-cart-btn: lightcoral;
+    --manager-background-color: rgba(223, 162, 162, 0.452);
+    --manager-button-color: rgba(212, 65, 97, 0.596);
+    --color-manager-item: rgba(218, 50, 101, 0.274);
+    --footer-icon-color: rgba(212, 132, 152, 0.774);
+}
+
+#navbar {
+    position: fixed;
+    background-color: var(--menu-background-color);
+    padding: 10px;
+    width: 100%;
+    height: 70px;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10;
+}
+
+#navbar-brand {
+    padding: 0 10px;
+}
+
+#navbar-brand h2 a {
+    color: var(--main-color)
+}
+
+#navbar-brand a:active {
+    color: rgba(226, 35, 108, 0.897)
+}
+
+#navbar-menu ul {
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+#navbar-menu li {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 5px;
+}
+
+#navbar-menu li a {
+    color: var(--menu-text-color);
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+#navbar-menu a:active {
+    color: var(--menu-background-color)
+}
+
+#nav-mobile {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+    padding-bottom: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--menu-background-color);
+    max-width: 100%;
+    transform: translateY(-100%);
+    z-index: 90;
+}
+
+#nav-mobile-brand {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 8px;
+    border-bottom: 1px solid var(--menu-background-color);
+}
+
+#brand-name a {
+    color: var(--main-color);
+}
+
+#nav-mobile-menu {
+    padding-top: 5px;
+    margin-left: 8px;
+}
+
+#nav-mobile-menu ul li {
+    padding-top: 5px;
+}
+
+#nav-mobile-menu li a {
+    color: var(--menu-text-color);
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 22px;
+    text-decoration: none;
+}
+
+#nav-mobile-menu a:active {
+    color: var(--menu-background-color)
+}
+
+
+/* btn chức năng cho thanh nav mobile */
+
+#nav-mobile-btn {
+    margin-left: 20px;
+    width: 40px;
+    height: 40px;
+}
+
+#nav-overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.137);
+    display: none;
+}
+
+#nav-mobile-togger:checked~#nav-overlay {
+    display: block;
+}
+
+#nav-mobile-togger:checked~#nav-mobile {
+    transform: translateY(0%);
+}
+
+.search-wrapper {
+    border: 1px solid #f0f0f0;
+    border-radius: 30px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.search-wrapper span {
+    display: inline-block;
+    padding: 0rem 1rem;
+    font-size: 1.5rem;
+}
+
+.search-wrapper input {
+    height: 100%;
+    padding: .5rem;
+    border: none;
+    outline: none;
+}
+
+#nav-short-menu .search-wrapper {
+    width: 57%;
+    font-size: 20px;
+    text-align: end;
+}
+
+@media (max-width: 1024px) {
+    #navbar-menu {
+        display: none;
+    }
+    #nav-mobile-btn {
+        display: flex;
+    }
+    .search-wrapper {
+        display: block;
+    }
+}
+
+@media(min-width: 900px) {
+    #nav-mobile,
+    #nav-mobile-btn {
+        display: none;
+    }
+}
+
+#main-content {
+    /* transition: margin-top 75ms; */
+    padding: 10px 5px;
+    max-height: 100%;
+    display: flex;
+    margin-left: 15px;
+    margin-right: 15px;
+    z-index: 1;
+}
+
+section {
+    min-height: 3.75rem;
+    width: 73%;
+    padding: 0 10px;
+}
+
+#latest {
+    margin-bottom: 20px;
+}
+
+#latest-name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 20px;
+}
+
+#latest-name h2 {
+    color: black;
+}
+
+.latest-seemore a:active {
+    color: red;
+}
+
+#latest-all-card {
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: flex-start;
+}
+
+#main-name h2 {
+    color: var(--main-color);
+}
+
+.all-card {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    margin-bottom: 20px;
+}
+
+.card {
+    text-align: center;
+    justify-content: center;
+    border-width: 2px;
+    box-sizing: border-box;
+    margin-right: 5px;
+    padding-bottom: 5px;
+    max-height: 50%;
+    margin-bottom: 4px;
+    align-items: center;
+}
+
+.card-image {
+    width: 50px;
+    height: 50px;
+}
+
+.card-image img {
+    width: 50px;
+    height: 50px;
+}
+
+.card-name a {
+    font-weight: bolder;
+    font-size: 20px;
+    color: black;
+    text-transform: capitalize;
+}
+
+.card-name a:hover {
+    color: var(--main-color)
+}
+
+.card-description {
+    font-style: italic;
+    font-size: 16px;
+}
+
+#cart-form {
+    height: 100%;
+}
+
+input.add-to-cart-btn {
+    cursor: pointer;
+    border: 1px solid white;
+    color: var(--add-to-cart-btn);
+}
+
+@media (max-width: 600px) {
+    .content {
+        width: 100%;
+    }
+    .card {
+        text-align: center;
+    }
+}
+
+@media (min-width: 720px) {
+    .content {
+        width: 95%;
+    }
+    .card {
+        width: 25%;
+    }
+    .card-image {
+        width: 100%;
+    }
+}
+
+#manager {
+    height: fit-content;
+    padding: 10px;
+    border: 3px solid rgba(218, 149, 149, 0.411);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: var(--manager-background-color);
+}
+
+#manager__title {
+    height: auto;
+    text-align: center;
+    border: 1px solid var(--manager-button-color);
+    display: flex;
+    justify-content: inherit;
+    padding-top: 2px;
+}
+
+#welcom-name {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#manager #list-item {
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+#manager #list-item .item {
+    margin-top: 10px;
+    flex: 1;
+    background-color: var(--color-manager-item);
+    text-align: center;
+    padding: 5px 10px;
+}
+
+.item-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 -5px;
+}
+
+.item-title-info,
+.item-button-manager {
+    display: inline-flex;
+    align-items: center;
+}
+
+.item-title-name {
+    margin: 0 5px;
+    text-align: left;
+    text-transform: capitalize;
+}
+
+.item-quantity {
+    margin: 0 5px;
+    display: flex;
+    align-items: center;
+}
+
+.item-qty-plus,
+.item-qty-minius {
+    width: 20px;
+    height: 23px;
+    border: 1px solid darksalmon;
+    color: pink;
+    background-color: var(--color-manager-item);
+}
+
+.item-amount {
+    width: 40px;
+    height: 23px;
+    text-align: center;
+}
+
+.item-details-brand,
+.item-details-type {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.item-brand-name,
+.item-type-name {
+    margin: 0 5px;
+}
+
+.cart-subtotal,
+.cart-shipfee,
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (min-width: 1200px) {
+    .content {
+        width: 85%;
+    }
+    #manage {
+        width: 25%;
+        height: fit-content;
+    }
+}
+
+
+/* #manager .cart-button {
+    height: 40%;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+} */
+
+#manager #cart-button button {
+    margin-top: 10px;
+    width: 49%;
+    border: 1px solid var(--manager-button-color);
+    background-color: var(--manager-button-color);
+}
+
+#login-title h3 {
+    text-align: center;
+}
+
+#login-signup-form {
+    max-height: 50vh;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}
+
+#login-form input {
+    border-radius: 4px;
+    width: 100%;
+}
+
+#login-button button {
+    width: 100%;
+    border: 1px solid var(--manager-button-color);
+    background-color: var(--manager-button-color);
+    cursor: pointer;
+}
+
+#signup-button {
+    display: flex;
+}
+
+#signup-button a {
+    color: #DD2F6E;
+    text-decoration: none;
+}
+
+a:hover {
+    color: white
+}
+
+footer {
+    align-items: center;
+    padding: 10px 20px 10px 20px;
+    text-align: center;
+    border-top: 1px solid var(--main-color);
+    margin-bottom: 0;
+    bottom: 0;
+    background-color: var(--menu-background-color);
+}
+
+footer a,
+footer a:hover {
+    text-decoration: none;
+}
+
+.socialbtns,
+.socialbtns ul,
+.socialbtns li {
+    margin: 0;
+    padding: 5px;
+}
+
+.socialbtns li {
+    list-style: none outside none;
+    display: inline-block;
+}
+
+.socialbtns .fa {
+    width: 40px;
+    height: 40px;
+    color: var(--footer-icon-color);
+    background-color: #FFF;
+    border: 1px solid rgba(209, 35, 78, 0.952);
+    padding-top: 12px;
+    border-radius: 22px;
+    -moz-border-radius: 22px;
+    -webkit-border-radius: 22px;
+    -o-border-radius: 22px;
+}
+
+.socialbtns .fa:hover {
+    color: #ffffff;
+    background-color: #000;
+    border: 1px solid #000;
+}
+
+button#user-logout {
+    color: blue;
+    border: none;
+    background: transparent;
+    text-decoration: underline;
+    cursor: pointer;
+    padding-right: 5px;
+}
+
+button#user-logout:focus {
+    outline: none;
+}
+
+@media (max-width: 719px) {
+    .content {
+        /* width: 65% */
+        width: 95%;
+    }
+    .card {
+        width: 48%;
+    }
+    .card-image {
+        width: 100%;
+    }
+    #manage {
+        width: 25%;
+    }
+    footer {
+        text-align: center;
+    }
+    footer #social-media-footer a .fa-facebook,
+    footer #social-media-footer a .fa-youtube,
+    footer #social-media-footer a .fa-github {
+        color: black;
+        transition: 0.4s;
+    }
+}
+
+.search-bar {
+    margin-top: 70px;
+    /* width: calc(60%); */
+    background-color: var(--manager-background-color);
+}
+
+.bottom {
+    width: 50%;
+}
+
+.search-bar button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    text-decoration: underline;
+    color: green;
+}
+
+.search-bar #search-toggle {
+    margin-left: 30px;
+}
+
+.row {
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+#advanced-search-filter {
+    display: none;
+    padding: 10px;
+}
+
+#advanced-search-filter input,
+#advanced-search-filter select {
+    border-radius: 5px;
+}
+
+.show {
+    display: block;
+}
+
+.search-info {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+
+.input-search {
+    width: 100%;
+}
+
+.pagination {
+    justify-content: center;
+}
